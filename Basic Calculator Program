@@ -1,0 +1,90 @@
+# Calculator & String Operations with Menu 🧮📝
+# Includes Error Handling ✅
+
+def calculator():
+    print("\n--- Arithmetic Calculator ---")
+    try:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+        operation = input("Enter operation (+, -, *, /): ")
+
+        if operation == "+":
+            result = num1 + num2
+            print(f"{num1} + {num2} = {result}")
+        elif operation == "-":
+            result = num1 - num2
+            print(f"{num1} - {num2} = {result}")
+        elif operation == "*":
+            result = num1 * num2
+            print(f"{num1} * {num2} = {result}")
+        elif operation == "/":
+            if num2 != 0:
+                result = num1 / num2
+                print(f"{num1} / {num2} = {result}")
+            else:
+                print("Error: Division by zero is not allowed!")
+        else:
+            print("Invalid operation. Please enter +, -, * or /.")
+
+    except ValueError:
+        print("Error: Please enter valid numbers.")
+
+
+def string_operations():
+    print("\n--- String Operations ---")
+    str1 = input("Enter the first string: ")
+    str2 = input("Enter the second string: ")
+
+    concat = str1 + " " + str2
+    print(f"Concatenated string: {concat}")
+    print(f"Length of first string: {len(str1)}")
+    print(f"Length of second string: {len(str2)}")
+    print(f"Uppercase first string: {str1.upper()}")
+    print(f"Lowercase second string: {str2.lower()}")
+
+
+# --- Menu System ---
+while True:
+    print("\n=== Main Menu ===")
+    print("1. Arithmetic Calculator")
+    print("2. String Operations")
+    print("3. Exit")
+
+    choice = input("Choose an option (1/2/3): ")
+
+    if choice == "1":
+        calculator()
+    elif choice == "2":
+        string_operations()
+    elif choice == "3":
+        print("Goodbye! 👋")
+        break
+    else:
+        print("Invalid choice. Please enter 1, 2, or 3.")
+
+=== Main Menu ===
+1. Arithmetic Calculator
+2. String Operations
+3. Exit
+Choose an option (1/2/3): 1
+
+--- Arithmetic Calculator ---
+Enter the first number: 10
+Enter the second number: 5
+Enter operation (+, -, *, /): *
+10.0 * 5.0 = 50.0
+
+=== Main Menu ===
+1. Arithmetic Calculator
+2. String Operations
+3. Exit
+Choose an option (1/2/3): 2
+
+--- String Operations ---
+Enter the first string: Hello
+Enter the second string: Python
+Concatenated string: Hello Python
+Length of first string: 5
+Length of second string: 6
+Uppercase first string: HELLO
+Lowercase second string: python
